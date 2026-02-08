@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 import Game from "../components/Game";
 function Home() {
   return (
-   <div className="h-screen bg-gradient-to-br from-black via-gray-800 to-white flex flex-col items-center justify-center text-white text-center p-2">
+   <div className="
+  fixed inset-0
+  w-screen h-[100dvh]
+  bg-gradient-to-br from-black via-gray-800 to-white
+  flex flex-col items-center justify-center
+  text-white text-center
+  overflow-hidden
+">
 
       <motion.h1
   initial={{ scale: 0.1, opacity: 0 }}
