@@ -1,27 +1,47 @@
 import { motion } from "framer-motion"
-import Gallery from '../pages/Gallery'
+import Gallery from "../pages/Gallery"
 import Game from "../components/Game"
+import bgPhoto from "../assets/Fav.jpeg"
+
 export default function Birthday() {
   return (
     <>
-    <div className="min-h-screen bg-pink-100 flex flex-col items-center justify-center text-center p-6">
-      <motion.h1
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="text-4xl font-bold text-pink-600"
-      >
-        Happy Birthday 🎉❤️
-      </motion.h1>
+      {/* 🎂 HERO SECTION */}
+      <div className="relative min-h-screen flex flex-col items-center justify-center text-center p-2 overflow-hidden">
 
-      <p className="mt-4 max-w-md text-gray-700">
-        On your special day, I just want to say  
-        you make my world brighter, happier & complete ✨
-      </p>
-     
+        {/* 📸 Background Image */}
+        <img
+          src={bgPhoto}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-    </div>
-    <Game/>
-<Gallery/>
+        {/* 🤍 White Overlay */}
+        <div className="absolute inset-0 bg-white/70"></div>
+
+        {/* ✨ CONTENT */}
+        <div className="relative z-10 flex flex-col items-center">
+
+          <motion.h1
+            initial={{ y: -80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="text-4xl md:text-6xl font-bold text-black-600"
+          >
+            HAPPY BIRTHDAY MINE
+          </motion.h1>
+
+          <p className="mt-4 max-w-md text-gray-700">
+            On your special day, I just want to say  
+            you make my world brighter, happier & complete ✨
+          </p>
+
+        </div>
+      </div>
+
+      {/* 🎮 GAME & 📸 GALLERY */}
+      <Game />
+      <Gallery />
     </>
   )
 }
