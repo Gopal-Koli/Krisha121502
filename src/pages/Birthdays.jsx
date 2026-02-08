@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import Gallery from '../pages/Gallery'
+import Game from "../components/Game"
 export default function Birthday() {
   return (
     <>
@@ -16,10 +17,11 @@ export default function Birthday() {
         On your special day, I just want to say  
         you make my world brighter, happier & complete ✨
       </p>
-     <Gallery/>
+     
 
     </div>
-
+    <Game/>
+<Gallery/>
     </>
   )
 }
