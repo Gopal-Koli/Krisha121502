@@ -1,7 +1,8 @@
 import { motion } from "framer-motion"
-
+import Gallery from '../pages/Gallery'
 export default function Birthday() {
   return (
+    <>
     <div className="min-h-screen bg-pink-100 flex flex-col items-center justify-center text-center p-6">
       <motion.h1
         initial={{ y: -100 }}
@@ -15,6 +16,10 @@ export default function Birthday() {
         On your special day, I just want to say  
         you make my world brighter, happier & complete ✨
       </p>
+     <Gallery/>
+
     </div>
+
+    </>
   )
 }

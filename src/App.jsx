@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import viteLogo from "/vite.svg";
 import Home from "../src/pages/Home.jsx";
 import Birthday from "./pages/Birthdays.jsx";
-import Gallery from "./pages/Gallery.jsx";
+
 import Proposal from "./pages/Proposal.jsx";
 import "./App.css";
 
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Birthday" element={<Birthday />} />
-        <Route path="/gallery" element={<Gallery />} />
+       
         <Route path="/proposal" element={<Proposal />} />
       </Routes>
     </BrowserRouter>
