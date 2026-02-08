@@ -16,29 +16,26 @@ export default function CircleGallery() {
   });
 
   return (
-    <div ref={ref} className="h-[300vh] bg-pink-50">
+    <div ref={ref} className="relative h-[300vh] bg-pink-50">
       <div className="sticky top-0 h-screen flex items-center justify-center">
-        <div className="relative w-80 h-96">
+        <div className="relative w-80 h-[420px]">
           {images.map((img, i) => {
-            const start = i / images.length;
-            const end = (i + 1) / images.length;
-
             const opacity = useTransform(
               scrollYProgress,
-              [start, end],
+              [i / images.length, (i + 1) / images.length],
               [0, 1]
             );
 
             const y = useTransform(
               scrollYProgress,
-              [start, end],
-              [100, -i * 10]
+              [i / images.length, (i + 1) / images.length],
+              [80, -i * 20]
             );
 
             const rotate = useTransform(
               scrollYProgress,
-              [start, end],
-              [-10, i * 6]
+              [i / images.length, (i + 1) / images.length],
+              [-10, i * 8]
             );
 
             return (
@@ -46,12 +43,11 @@ export default function CircleGallery() {
                 key={i}
                 src={img}
                 style={{ opacity, y, rotate }}
-                className="absolute w-full h-full object-cover rounded-3xl shadow-2xl"
+                className="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-2xl"
               />
             );
           })}
         </div>
-        
       </div>
     </div>
   );

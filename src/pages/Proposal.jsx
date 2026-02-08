@@ -11,7 +11,14 @@ export default function Proposal() {
   }
 
   return (
-    <div className="h-screen bg-gradient-to-br from-red-400 to-pink-600 flex flex-col items-center justify-center text-white text-center">
+  <div className="
+  relative
+  min-h-[100dvh]
+  w-full
+  bg-gradient-to-br from-red-400 to-pink-600
+  flex flex-col items-center justify-center
+  text-white text-center
+">
       <h1 className="text-4xl font-bold mb-6">
         Will You Be Mine Forever? 💍❤️
       </h1>

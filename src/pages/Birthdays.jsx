@@ -7,8 +7,14 @@ export default function Birthday() {
   return (
     <>
       {/* 🎂 HERO SECTION */}
-      <div className="relative min-h-screen flex flex-col items-center justify-center text-center p-2 overflow-hidden">
-
+   <div className="
+  relative
+  min-h-screen
+  w-full
+  flex flex-col items-center justify-center
+  text-center
+  overflow-hidden
+">
         {/* 📸 Background Image */}
         <img
           src={bgPhoto}

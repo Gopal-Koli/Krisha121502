@@ -64,9 +64,11 @@ export default function Game({ onFinish }) {
   }
 
   return (
-    <section
-      className={`relative min-h-screen bg-gradient-to-br ${bg} flex flex-col items-center justify-center text-center px-4 overflow-hidden`}
-    >
+  <section
+  className={`relative min-h-[100dvh] bg-gradient-to-br ${bg}
+  flex flex-col items-center justify-center
+  text-center px-4 overflow-hidden`}
+>
       {step === 4 && <Confetti />}
 
       {/* 📸 PHOTO STEP */}

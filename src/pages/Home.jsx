@@ -24,11 +24,36 @@ function Home() {
 
       <p className="mt-4 text-lg">I made something special for you…</p>
 
-      <Link to="/birthday">
-        <button className="mt-6 bg-white text-pink-600 px-6 py-3 rounded-full font-bold">
-          Start
-        </button>
-      </Link>
+     <Link to="/birthday">
+  <button
+    className="
+      bg-white
+      text-black
+      text-xl
+      px-20
+      py-20
+      border-1
+      shadow-gray-500 cursor-pointer
+      rounded-full
+      font-bold===
+      tracking-wide
+      shadow-[0_14px_30px_rgba(0,0,0,0.25)]
+      hover:shadow-[0_22px_45px_rgba(0,0,0,0.35)]
+      active:translate-y-1
+      active:shadow-[0_10px_20px_rgba(0,0,0,0.3)]
+      transition-all
+      duration-300
+      flex
+      items-center
+      justify-center
+      
+    "
+  >
+    Start 
+  </button>
+</Link>
+
+
   
     </div>
   );
