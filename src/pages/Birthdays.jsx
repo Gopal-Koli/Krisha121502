@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import Gallery from "../pages/Gallery"
 import Game from "../components/Game"
 import bgPhoto from "../assets/Fav.jpeg"
-
+import Proposal from "./Proposal"
 export default function Birthday() {
   return (
     <>
@@ -10,7 +10,7 @@ export default function Birthday() {
    <div className="
   relative
   min-h-screen
-  w-full
+  w-screen-h-[100dvh]
   flex flex-col items-center justify-center
   text-center
   overflow-hidden
@@ -48,6 +48,7 @@ export default function Birthday() {
       {/* 🎮 GAME & 📸 GALLERY */}
       <Game />
       <Gallery />
+      <Proposal />
     </>
   )
 }

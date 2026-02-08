@@ -5,14 +5,13 @@ import Confetti from "react-confetti"
 import photo from "../assets/Krisha1.jpeg"
 import endingVideo from "../assets/videos/endingVideo.mp4"
 
-// ⚠️ Better if you rename to .mp3 later
 import song from "../assets/videos/BarBar.mpeg"
 import clickSound from "../assets/videos/BarBar.mpeg"
 import fireworks from "../assets/videos/BarBar.mpeg"
 
 const steps = [
   "Happy Birthday Mine ❤️",
-  "Change the Mood 🎨",
+  "",
   "Special Moment 📸",
   "Cheering Her Name 🎉",
   "Final Surprise 🎆",
@@ -21,8 +20,8 @@ const steps = [
 export default function Game({ onFinish }) {
   const [step, setStep] = useState(0)
   const [bg, setBg] = useState("from-pink-100 to-yellow-100")
+  const [showVideo, setShowVideo] = useState(false)
 
-  // 🔊 Audio refs (VERY IMPORTANT)
   const musicRef = useRef(null)
   const sfxRef = useRef(null)
 
@@ -37,21 +36,26 @@ export default function Game({ onFinish }) {
   }
 
   useEffect(() => {
-    if (step === 1) {
-      setBg("from-purple-500 to-pink-500")
+    switch (step) {
+      case 1:
+        setBg("from-black via-gray-800 to-white")
+        break
+      case 2:
+        setBg("from-pink-500 to-purple-600")
+        break
+      case 3:
+        setBg("from-indigo-700 to-black")
+        break
+      default:
+        setBg("from-pink-100 to-yellow-100")
     }
 
-    // 🎆 FINAL STEP
     if (step === 4) {
-      playSound(musicRef, song, true)      // song once (loop)
-      playSound(sfxRef, fireworks, false)  // fireworks once
-
-      setTimeout(() => {
-        onFinish && onFinish()
-      }, 20000)
+      setShowVideo(true)
+      playSound(musicRef, song, true)
+      playSound(sfxRef, fireworks)
     }
 
-    // cleanup on unmount
     return () => {
       musicRef.current?.pause()
       sfxRef.current?.pause()
@@ -64,36 +68,42 @@ export default function Game({ onFinish }) {
   }
 
   return (
-  <section
-  className={`relative min-h-[100dvh] bg-gradient-to-br ${bg}
-  flex flex-col items-center justify-center
-  text-center px-4 overflow-hidden`}
->
+    <section
+      className={`relative min-h-[100dvh] bg-gradient-to-br ${bg}
+      flex flex-col items-center justify-center
+      text-center px-4 overflow-hidden`}
+    >
       {step === 4 && <Confetti />}
 
       {/* 📸 PHOTO STEP */}
       {step === 2 && (
         <motion.img
           src={photo}
-          initial={{ scale: 0, rotate: -10 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 120, rotate: -15, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, rotate: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="w-72 md:w-96 rounded-3xl shadow-2xl mb-6 z-10"
         />
       )}
 
       {/* 🎥 FINAL VIDEO */}
-      {step === 4 && (
-        <div className="fixed inset-0 w-screen h-[100svh] z-0">
-    <video
-      autoPlay
-      playsInline
-      muted={false}
-      className="w-full h-full object-cover"
-    >
-      <source src={endingVideo} type="video/mp4" />
-    </video>
-  </div>
+      {showVideo && (
+        <div className="fixed inset-0 z-50 bg-black">
+          <video
+            autoPlay
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={endingVideo} type="video/mp4" />
+          </video>
+
+          <button
+            onClick={() => setShowVideo(false)}
+            className="absolute top-5 right-5 text-white text-3xl bg-black/60 rounded-full px-4 py-1"
+          >
+            ✕
+          </button>
+        </div>
       )}
 
       {/* 📝 TEXT */}

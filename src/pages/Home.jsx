@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Game from "../components/Game";
+import { TbHandClick } from "react-icons/tb";
 function Home() {
   return (
    <div className="
@@ -49,7 +50,7 @@ function Home() {
       
     "
   >
-    Start 
+Click ME 
   </button>
 </Link>
 

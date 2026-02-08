@@ -4,8 +4,13 @@ import { useRef } from "react";
 import img1 from "../assets/Krisha1.jpeg";
 import img2 from "../assets/Krisha2.jpeg";
 import img3 from "../assets/Krisha3.jpeg";
-
-const images = [img1, img2, img3];
+import img4 from "../assets/Krisha4.jpeg";
+import img5 from "../assets/Krisha5.jpeg";
+import img6 from "../assets/Krisha6.jpeg";
+import img7 from "../assets/Krisha8.jpeg";
+import img8 from "../assets/Krisha9.jpeg";
+import img9 from "../assets/Krisha10.jpeg";
+const images = [img1, img2, img3,img4,img5,img6,img8,img9];
 
 export default function CircleGallery() {
   const ref = useRef(null);
