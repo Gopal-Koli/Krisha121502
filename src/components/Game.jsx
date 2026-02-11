@@ -1,18 +1,14 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Confetti from "react-confetti"
 
-import photo from "../assets/Krisha1.jpeg"
-import endingVideo from "../assets/videos/endingVideo.mp4"
-
-import song from "../assets/videos/BarBar.mpeg"
-import clickSound from "../assets/videos/BarBar.mpeg"
-import fireworks from "../assets/videos/BarBar.mpeg"
+import photo from "../assets/Saree2.jpeg"
+import endingVideo from "../assets/videos/Ending.mp4"
 
 const steps = [
-  "Happy Birthday Mine ❤️",
+  "Love uhhhh ",
   "",
-  "Special Moment 📸",
+  "MY MY My ",
   "Cheering Her Name 🎉",
   "Final Surprise 🎆",
 ]
@@ -21,19 +17,6 @@ export default function Game({ onFinish }) {
   const [step, setStep] = useState(0)
   const [bg, setBg] = useState("from-pink-100 to-yellow-100")
   const [showVideo, setShowVideo] = useState(false)
-
-  const musicRef = useRef(null)
-  const sfxRef = useRef(null)
-
-  const playSound = (ref, file, loop = false) => {
-    if (ref.current) {
-      ref.current.pause()
-      ref.current.currentTime = 0
-    }
-    ref.current = new Audio(file)
-    ref.current.loop = loop
-    ref.current.play()
-  }
 
   useEffect(() => {
     switch (step) {
@@ -52,18 +35,10 @@ export default function Game({ onFinish }) {
 
     if (step === 4) {
       setShowVideo(true)
-      playSound(musicRef, song, true)
-      playSound(sfxRef, fireworks)
-    }
-
-    return () => {
-      musicRef.current?.pause()
-      sfxRef.current?.pause()
     }
   }, [step])
 
   const next = () => {
-    playSound(sfxRef, clickSound)
     setStep((prev) => prev + 1)
   }
 
@@ -114,7 +89,7 @@ export default function Game({ onFinish }) {
           animate={{ y: 0, opacity: 1 }}
           className="text-4xl md:text-6xl font-bold text-white mb-6 z-10"
         >
-          {step === 3 ? "🎉 Happy Birthday Spana 🎉" : steps[step]}
+          {step === 3 ? " Bundicha Ladu " : steps[step]}
         </motion.h1>
       )}
 
@@ -125,7 +100,7 @@ export default function Game({ onFinish }) {
           onClick={next}
           className="z-10 bg-white text-pink-600 px-8 py-4 rounded-full font-bold shadow-xl"
         >
-          Next 💖
+          Next 
         </motion.button>
       )}
     </section>
