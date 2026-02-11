@@ -30,14 +30,14 @@ export default function Birthday() {
             initial={{ y: -60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-bold text-black"
+            className="text-4xl md:text-6xl font-bold text-white"
           >
             HAPPY BIRTHDAY MINE 🤍
 
            
           </motion.h1>
 
-          <p className="mt-4 max-w-md text-gray-700 text-base md:text-lg">
+          <p className="mt-4 max-w-md text-gray-400 text-base md:text-lg">
             On your special day, I just want to say  
             you make my world brighter, happier & complete 
           </p>
