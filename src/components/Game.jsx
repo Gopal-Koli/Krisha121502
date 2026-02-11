@@ -24,13 +24,13 @@ export default function Game({ onFinish }) {
         setBg("from-black via-gray-800 to-white")
         break
       case 2:
-        setBg("from-pink-500 to-purple-600")
+        setBg("from-black via-gray-800 to-white")
         break
       case 3:
-        setBg("from-indigo-700 to-black")
+        setBg("from-black via-gray-800 to-white")
         break
       default:
-        setBg("from-pink-100 to-yellow-100")
+        setBg("from-indigo-700 to-black")
     }
 
     if (step === 4) {
